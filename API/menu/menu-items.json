@@ -1,0 +1,60 @@
+{
+    "menu_items": [
+      {
+        "id": "101",
+        "name": "Cheese Pizza",
+        "description": "Classic pizza with our signature tomato sauce and blend of premium mozzarella",
+        "price": 12.99,
+        "category": "pizzas",
+        "nutrition": {
+          "calories": 250,
+          "protein": 12,
+          "carbohydrates": 30,
+          "fat": 8
+        },
+        "size_options": ["small", "medium", "large"]
+      },
+      {
+        "id": "102",
+        "name": "Pepperoni Pizza",
+        "description": "Our classic cheese pizza topped with premium pepperoni slices",
+        "price": 14.99,
+        "category": "pizzas",
+        "nutrition": {
+          "calories": 285,
+          "protein": 14,
+          "carbohydrates": 31,
+          "fat": 12
+        },
+        "size_options": ["small", "medium", "large"]
+      },
+      {
+        "id": "103",
+        "name": "Veggie Pizza",
+        "description": "Fresh bell peppers, mushrooms, onions, olives, and tomatoes on our signature sauce",
+        "price": 15.99,
+        "category": "pizzas",
+        "nutrition": {
+          "calories": 240,
+          "protein": 10,
+          "carbohydrates": 35,
+          "fat": 7
+        },
+        "size_options": ["small", "medium", "large"]
+      },
+      {
+        "id": "104",
+        "name": "Code Spaghetti",
+        "description": "Perfectly tangled pasta with our syntax-error-free marinara sauce and meatballs",
+        "price": 13.99,
+        "category": "pasta",
+        "nutrition": {
+          "calories": 320,
+          "protein": 15,
+          "carbohydrates": 45,
+          "fat": 9
+        }
+      }
+    ]
+  }
+  
