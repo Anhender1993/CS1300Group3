@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url('../fonts/HKGrotesk-Regular.woff2') format('woff2'),
+         url('../fonts/HKGrotesk-Regular.woff') format('woff');
+}
+
+body {
+    font-family: 'HK Grotesk', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.button {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Target specific buttons using their text content */
+.button:nth-child(1),  /* Order Food */
+.button:nth-child(3) { /* Contact Us */
+    padding-top: 17px;
+    padding-bottom: 13px;
+}
+
+.text {
+    color: #07004D;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li {
+    font-family: 'HK Grotesk', sans-serif;
+}
