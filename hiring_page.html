@@ -1,130 +1,129 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiring Page</title>
+    <title>Join Our Team</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: #ececec;
         }
 
         header {
-            background-color: #FFD700;
-            padding: 10px;
+            background: #FFD700;
+            padding: 15px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            color: #000;
+            color: #333;
         }
 
-        .container {
+        .wrapper {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
+            justify-content: space-around;
+            padding: 25px;
         }
 
-        .left-section {
+        .left-panel {
             text-align: center;
-		}
-		.left-section img {
-            width: 200px;
-            border-radius: 10px;
         }
 
-        .left-section nav {
-            margin-top: 20px;
+        .left-panel img {
+            width: 220px;
+            border-radius: 12px;
         }
 
-        .left-section nav a {
-            display: block;
+        .left-panel nav {
+            margin-top: 15px;
+        }
+
+        .left-panel nav a {
+            display: inline-block;
             margin: 10px 0;
-            padding: 10px;
-            background-color: #007BFF;
+            padding: 12px;
+            background: #007BFF;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
+            border-radius: 6px;
         }
 
-        .left-section nav a:hover {
-            background-color: #0056b3;
+        .left-panel nav a:hover {
+            background: #0056b3;
         }
 
-        .right-section {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
+        .right-panel {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
         }
-		.right-section h2 {
+
+        .right-panel h2 {
             color: #007BFF;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .right-section form input {
+        .right-panel form input {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            border: 1px solid #bbb;
             border-radius: 5px;
         }
 
-        .right-section form button {
+        .right-panel form button {
             width: 100%;
-            padding: 10px;
-            background-color: #28a745;
+            padding: 12px;
+            background: #28a745;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 16px;
         }
 
-        .right-section form button:hover {
-            background-color: #218838;
+        .right-panel form button:hover {
+            background: #218838;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hiring Page</h1>
-	</header>
-    <div class="container">
-        <div class="left-section">
+        <h1>Join Our Team</h1>
+    </header>
+    <div class="wrapper">
+        <div class="left-panel">
             <img src="pizza-placeholder.jpg" alt="Lumi Pizza">
             <nav>
                 <a href="#">Home</a>
-                <a href="#">Contact Us</a>
+                <a href="#">Contact</a>
                 <a href="#">Menu</a>
-                <a href="#">Nutritional Facts</a>
+                <a href="#">Nutrition</a>
             </nav>
         </div>
-        <div class="right-section">
+        <div class="right-panel">
             <h2>Join the Team!</h2>
-            <form id="hiringForm">
+            <form id="applicationForm">
                 <input type="text" id="name" placeholder="Name" required>
                 <input type="email" id="email" placeholder="Email" required>
-                <input type="tel" id="phone" placeholder="Phone Number" required>
-                <button type="submit">Sign Up</button>
+                <input type="tel" id="phone" placeholder="Phone" required>
+                <button type="submit">Apply Now</button>
             </form>
         </div>
     </div>
 
     <script>
-        document.getElementById('hiringForm').addEventListener('submit', function(e) {
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
 
-            alert(`Thank you, ${name}! We will contact you at ${email} or ${phone}.`);
+            alert(`Thank you, ${name}! We will reach out to you at ${email} or ${phone}.`);
         });
     </script>
 </body>
