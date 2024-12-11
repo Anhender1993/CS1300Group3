@@ -25,31 +25,37 @@
 
         .wrapper {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: flex-start;
             padding: 25px;
         }
 
         .left-panel {
             text-align: center;
+            flex: 1;
         }
 
         .left-panel img {
-            width: 220px;
-            border-radius: 12px;
+            width: 180px;
+            border-radius: 50%;
+            background-color: #fff;
+            padding: 10px;
         }
 
         .left-panel nav {
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .left-panel nav a {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 12px;
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
             background: #007BFF;
             color: #fff;
             text-decoration: none;
             border-radius: 6px;
+            width: 80%;
+            text-align: center;
         }
 
         .left-panel nav a:hover {
@@ -61,11 +67,19 @@
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            flex: 2;
+            margin-left: 20px;
         }
 
         .right-panel h2 {
             color: #007BFF;
             margin-bottom: 15px;
+        }
+
+        .right-panel form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
         }
 
         .right-panel form input {
@@ -89,6 +103,18 @@
         .right-panel form button:hover {
             background: #218838;
         }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .right-panel {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,17 +126,23 @@
             <img src="LumiPizzatransparent.png" alt="Lumi Pizza">
             <nav>
                 <a href="#">Home</a>
-                <a href="#">Contact</a>
+                <a href="#">Contact Us</a>
                 <a href="#">Menu</a>
-                <a href="#">Nutrition</a>
+                <a href="#">Nutritional Facts</a>
             </nav>
         </div>
         <div class="right-panel">
             <h2>Join the Team!</h2>
             <form id="applicationForm">
+                <label for="name">Name:</label>
                 <input type="text" id="name" placeholder="Name" required>
+
+                <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Email" required>
+
+                <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" placeholder="Phone" required>
+
                 <button type="submit">Apply Now</button>
             </form>
         </div>
