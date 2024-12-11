@@ -3,9 +3,6 @@ this is the final test for the Atlas School class CS1300, group 3
 Ari, Casey, and Andrew
 
 
-hiring page /// reference photos 
-
-& menu //
 
 
 
