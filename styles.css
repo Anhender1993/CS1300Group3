@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'HK Grotesk';
-    src: url('../fonts/HKGrotesk-Regular.woff2') format('woff2'),
-         url('../fonts/HKGrotesk-Regular.woff') format('woff');
+    src: url('fonts/HKGrotesk-Regular.woff2') format('woff2'),
+         url('fonts/HKGrotesk-Regular.woff') format('woff');
 }
 
 body {
@@ -15,14 +15,87 @@ body {
     height: 100vh;
 }
 
+/* Left Navigation Section */
+.left-section {
+    background-color: #FF0000;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    display: inline-block;
+    width: 65%; /* Reduced from 80% to 65% */
+    background-color: #FFFFFF;
+    color: #07004D;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #F1F1F1;
+}
+
+/* Right Contact Section */
 .right-section {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
 }
 
+.contact-info h2 {
+    font-size: 36px;
+    color: #07004D;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 24px;
+    color: #07004D;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #07004D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* General Button Styles */
 .button {
     background-color: white;
     color: black;
@@ -37,15 +110,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 85%; /* Reduced by 15% */
 }
 
 /* Target specific buttons using their text content */
-.button:nth-child(1),  /* Order Food */
-.button:nth-child(3) { /* Contact Us */
+.button:nth-child(1),
+.button:nth-child(3) {
     padding-top: 17px;
     padding-bottom: 13px;
 }
 
+/* Text Styles */
 .text {
     color: #07004D;
     position: relative;
