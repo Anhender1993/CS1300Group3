@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://www.edamam.com/assets/css/label.css" rel="stylesheet">
     <title>Lumi Pizza - Nutritional Information</title>
-    <script src="Nutrition.js" type="module" defer></script>
     <script src="app.js" type="module" defer></script>
     <style>
         .nutrition-grid {
@@ -131,7 +130,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="nutrition.html">Nutritional facts</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="join.html">Join the team</a></li>
                 </ul>
@@ -141,27 +140,22 @@
         <div class="right-section">
             <h1 class="main-title">Nutritional Information</h1>
             <div class="nutrition-grid">
-                <!-- Clickable Cards -->
                 <div class="nutrition-item" onclick="openModal('pepperoni-modal')">
-                    <img src="images/pepperoni-pizza.jpg" alt="Pepperoni Pizza" class="pizza-image">
                     <h2>Pepperoni Pizza</h2>
                     <p>Click to view nutrition facts</p>
                 </div>
-
+        
                 <div class="nutrition-item" onclick="openModal('cheese-modal')">
-                    <img src="images/cheese-pizza.jpg" alt="Cheese Pizza" class="pizza-image">
                     <h2>Cheese Pizza</h2>
                     <p>Click to view nutrition facts</p>
                 </div>
-
+        
                 <div class="nutrition-item" onclick="openModal('veggie-modal')">
-                    <img src="images/veggie-pizza.jpg" alt="Veggie Pizza" class="pizza-image">
                     <h2>Veggie Pizza</h2>
                     <p>Click to view nutrition facts</p>
                 </div>
-
+        
                 <div class="nutrition-item" onclick="openModal('spaghetti-modal')">
-                    <img src="images/code-spaghetti.jpg" alt="Code Spaghetti" class="pizza-image">
                     <h2>Code Spaghetti</h2>
                     <p>Click to view nutrition facts</p>
                 </div>
@@ -169,95 +163,78 @@
         </div>
     </div>
 
-<!-- Modals -->
-<div id="pepperoni-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal('pepperoni-modal')">&times;</span>
-        <h2>Pepperoni Pizza</h2>
-        <div class="performance-facts">
-            <table>
-                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
-                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
-                <tr><th colspan="2">Amount Per Serving</th></tr>
-                <tr><td><strong>Calories</strong></td><td>298</td></tr>
-                <tr><td>Total Fat</td><td>13.3g</td></tr>
-                <tr><td>Saturated Fat</td><td>5.3g</td></tr>
-                <tr><td>Cholesterol</td><td>30mg</td></tr>
-                <tr><td>Sodium</td><td>683mg</td></tr>
-                <tr><td>Total Carbohydrates</td><td>31g</td></tr>
-                <tr><td>Dietary Fiber</td><td>2g</td></tr>
-                <tr><td>Sugars</td><td>3.5g</td></tr>
-                <tr><td>Protein</td><td>13.3g</td></tr>
-            </table>
+    <!-- Modals -->
+    <div id="pepperoni-modal" class="modal">
+        <div class="modal-content" style="width: 300px;">
+            <span class="close-button" onclick="closeModal('pepperoni-modal')">&times;</span>
+            <h3>Pepperoni Pizza Nutrition Facts</h3>
+            <div style="text-align: left; padding: 10px;">
+                <p>Serving: 1/8 slice</p>
+                <p>Calories: 298</p>
+                <p>Fat: 13.3g</p>
+                <p>Carbs: 31g</p>
+                <p>Protein: 13.3g</p>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="cheese-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal('cheese-modal')">&times;</span>
-        <h2>Cheese Pizza</h2>
-        <div class="performance-facts">
-            <table>
-                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
-                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
-                <tr><th colspan="2">Amount Per Serving</th></tr>
-                <tr><td><strong>Calories</strong></td><td>250</td></tr>
-                <tr><td>Total Fat</td><td>10g</td></tr>
-                <tr><td>Saturated Fat</td><td>4.5g</td></tr>
-                <tr><td>Cholesterol</td><td>18mg</td></tr>
-                <tr><td>Sodium</td><td>570mg</td></tr>
-                <tr><td>Total Carbohydrates</td><td>31g</td></tr>
-                <tr><td>Dietary Fiber</td><td>1.5g</td></tr>
-                <tr><td>Sugars</td><td>3.5g</td></tr>
-                <tr><td>Protein</td><td>11g</td></tr>
-            </table>
+    <div id="cheese-modal" class="modal">
+        <div class="modal-content" style="width: 300px;">
+            <span class="close-button" onclick="closeModal('cheese-modal')">&times;</span>
+            <h3>Cheese Pizza Nutrition Facts</h3>
+            <div style="text-align: left; padding: 10px;">
+                <p>Serving: 1/8 slice</p>
+                <p>Calories: 250</p>
+                <p>Fat: 10g</p>
+                <p>Carbs: 31g</p>
+                <p>Protein: 11g</p>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="veggie-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal('veggie-modal')">&times;</span>
-        <h2>Veggie Pizza</h2>
-        <div class="performance-facts">
-            <table>
-                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
-                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
-                <tr><th colspan="2">Amount Per Serving</th></tr>
-                <tr><td><strong>Calories</strong></td><td>235</td></tr>
-                <tr><td>Total Fat</td><td>8g</td></tr>
-                <tr><td>Saturated Fat</td><td>3.5g</td></tr>
-                <tr><td>Cholesterol</td><td>15mg</td></tr>
-                <tr><td>Sodium</td><td>490mg</td></tr>
-                <tr><td>Total Carbohydrates</td><td>32g</td></tr>
-                <tr><td>Dietary Fiber</td><td>2.5g</td></tr>
-                <tr><td>Sugars</td><td>4g</td></tr>
-                <tr><td>Protein</td><td>10g</td></tr>
-            </table>
+    <div id="veggie-modal" class="modal">
+        <div class="modal-content" style="width: 300px;">
+            <span class="close-button" onclick="closeModal('veggie-modal')">&times;</span>
+            <h3>Veggie Pizza Nutrition Facts</h3>
+            <div style="text-align: left; padding: 10px;">
+                <p>Serving: 1/8 slice</p>
+                <p>Calories: 235</p>
+                <p>Fat: 8g</p>
+                <p>Carbs: 32g</p>
+                <p>Protein: 10g</p>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="spaghetti-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal('spaghetti-modal')">&times;</span>
-        <h2>Code Spaghetti</h2>
-        <div class="performance-facts">
-            <table>
-                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
-                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
-                <tr><th colspan="2">Amount Per Serving</th></tr>
-                <tr><td><strong>Calories</strong></td><td>320</td></tr>
-                <tr><td>Total Fat</td><td>14g</td></tr>
-                <tr><td>Saturated Fat</td><td>6g</td></tr>
-                <tr><td>Cholesterol</td><td>25mg</td></tr>
-                <tr><td>Sodium</td><td>720mg</td></tr>
-                <tr><td>Total Carbohydrates</td><td>35g</td></tr>
-                <tr><td>Dietary Fiber</td><td>2g</td></tr>
-                <tr><td>Sugars</td><td>4g</td></tr>
-                <tr><td>Protein</td><td>15g</td></tr>
-            </table>
+    <div id="spaghetti-modal" class="modal">
+        <div class="modal-content" style="width: 300px;">
+            <span class="close-button" onclick="closeModal('spaghetti-modal')">&times;</span>
+            <h3>Code Spaghetti Nutrition Facts</h3>
+            <div style="text-align: left; padding: 10px;">
+                <p>Serving: 1/8 slice</p>
+                <p>Calories: 320</p>
+                <p>Fat: 14g</p>
+                <p>Carbs: 35g</p>
+                <p>Protein: 15g</p>
+            </div>
         </div>
     </div>
-</div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
