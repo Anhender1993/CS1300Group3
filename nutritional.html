@@ -1,137 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://www.edamam.com/assets/css/label.css" rel="stylesheet">
-    <title>Lumi Pizza - Nutritional Information</title>
-    <script src="app.js" type="module" defer></script>
-    <style>
-        body {
-            background-image: url('images/background_pizza.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            animation: fadeIn 1.5s ease-in;
-        }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://www.edamam.com/assets/css/label.css" rel="stylesheet">
+
+    <title>Lumi Pizza - Nutritional Information</title>
+
+    <script src="app.js" type="module" defer></script>
+
+    <style>
 
         .nutrition-grid {
+
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 20px;
+
             padding: 20px;
+
         }
+
         
+
         .nutrition-item {
+
             text-align: center;
+
             padding: 20px;
+
             background: rgba(255, 255, 255, 0.9);
+
             border-radius: 10px;
+
             cursor: pointer;
+
             transition: transform 0.3s ease;
+
             margin: 10px;
+
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
         }
+
 
         .nutrition-item:hover {
+
             transform: scale(1.05);
+
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+
         }
+
 
         .modal {
+
             display: none;
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 100%;
+
             background-color: rgba(0, 0, 0, 0.7);
+
             z-index: 1000;
+
         }
+
 
         .modal-content {
+
             position: relative;
+
             background-color: white;
+
             margin: 5% auto;
+
             padding: 20px;
+
             width: 80%;
+
             max-width: 600px;
+
             border-radius: 10px;
+
             max-height: 90vh;
+
             overflow-y: auto;
+
         }
+
 
         .close-button {
+
             position: absolute;
+
             right: 10px;
+
             top: 10px;
+
             font-size: 24px;
+
             cursor: pointer;
+
             background: none;
+
             border: none;
+
             color: #333;
+
             padding: 5px 10px;
+
             border-radius: 5px;
+
         }
+
 
         .close-button:hover {
+
             background-color: #f0f0f0;
+
         }
+
 
         .pizza-image {
+
             width: 200px;
+
             height: 200px;
+
             object-fit: cover;
+
             border-radius: 10px;
+
             margin-bottom: 15px;
+
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
         }
+
 
         .right-section {
+
             padding: 20px;
+
             background-color: rgba(255, 255, 255, 0.9);
+
             border-radius: 10px;
+
             margin: 20px;
+
         }
+
 
         .performance-facts {
+
             border: 1px solid #000;
+
             margin: 20px auto;
+
             padding: 0.5rem;
+
             width: 100%;
+
             max-width: 400px;
+
         }
+
 
         .performance-facts table {
+
             border-collapse: collapse;
+
             width: 100%;
+
         }
+
 
         .performance-facts__title {
+
             font-weight: bold;
+
             font-size: 2rem;
+
             margin: 0 0 0.25rem 0;
+
         }
+
 
         h1.main-title {
+
             text-align: center;
+
             margin-bottom: 30px;
+
             color: #333;
+
             font-size: 2.5em;
+
         }
 
+
         .nutrition-title {
+
             text-align: center;
+
             font-size: 24px;
+
             margin-bottom: 15px;
+
             color: #333;
+
         }
+
     </style>
+
 </head>
-[Rest of the HTML remains exactly the same...]
+
+<body>
+
+    <div class="container">
+
+        <div class="left-section">
+
+            <div class="logo">
+
+                <img src="images/LumiPizzatransparent.png" alt="Lumi Logo" style="width: 100px; height: 100px; margin-right: 10px;">
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="contact.html">Contact us</a></li>
+
+                    <li><a href="ordering_menu.html">Menu</a></li>
+
+                    <li><a href="hiring_page.html">Join the team</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <div class="right-section">
+
+            <h1 class="main-title">Nutritional Information</h1>
+
+            <div class="nutrition-grid">
+
+                <div class="nutrition-item" onclick="openModal('pepperoni-modal')">
+
+                    <h2>Pepperoni Pizza</h2>
+
+                    <p>Click to view nutrition facts</p>
+
+                </div>
+
+        
+
+                <div class="nutrition-item" onclick="openModal('cheese-modal')">
+
+                    <h2>Cheese Pizza</h2>
+
+                    <p>Click to view nutrition facts</p>
+
+                </div>
+
+        
+
+                <div class="nutrition-item" onclick="openModal('veggie-modal')">
+
+                    <h2>Veggie Pizza</h2>
+
+                    <p>Click to view nutrition facts</p>
+
+                </div>
+
+        
+
+                <div class="nutrition-item" onclick="openModal('spaghetti-modal')">
+
+                    <h2>Code Spaghetti</h2>
+
+                    <p>Click to view nutrition facts</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Modals -->
+
+    <div id="pepperoni-modal" class="modal">
+
+        <div class="modal-content" style="width: 300px;">
+
+            <span class="close-button" onclick="closeModal('pepperoni-modal')">&times;</span>
+
+            <h3>Pepperoni Pizza Nutrition Facts</h3>
+
+            <div style="text-align: left; padding: 10px;">
+
+                <p>Serving: 1/8 slice</p>
+
+                <p>Calories: 298</p>
+
+                <p>Fat: 13.3g</p>
+
+                <p>Carbs: 31g</p>
+
+                <p>Protein: 13.3g</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="cheese-modal" class="modal">
+
+        <div class="modal-content" style="width: 300px;">
+
+            <span class="close-button" onclick="closeModal('cheese-modal')">&times;</span>
+
+            <h3>Cheese Pizza Nutrition Facts</h3>
+
+            <div style="text-align: left; padding: 10px;">
+
+                <p>Serving: 1/8 slice</p>
+
+                <p>Calories: 250</p>
+
+                <p>Fat: 10g</p>
+
+                <p>Carbs: 31g</p>
+
+                <p>Protein: 11g</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="veggie-modal" class="modal">
+
+        <div class="modal-content" style="width: 300px;">
+
+            <span class="close-button" onclick="closeModal('veggie-modal')">&times;</span>
+
+            <h3>Veggie Pizza Nutrition Facts</h3>
+
+            <div style="text-align: left; padding: 10px;">
+
+                <p>Serving: 1/8 slice</p>
+
+                <p>Calories: 235</p>
+
+                <p>Fat: 8g</p>
+
+                <p>Carbs: 32g</p>
+
+                <p>Protein: 10g</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="spaghetti-modal" class="modal">
+
+        <div class="modal-content" style="width: 300px;">
+
+            <span class="close-button" onclick="closeModal('spaghetti-modal')">&times;</span>
+
+            <h3>Code Spaghetti Nutrition Facts</h3>
+
+            <div style="text-align: left; padding: 10px;">
+
+                <p>Serving: 1/8 slice</p>
+
+                <p>Calories: 320</p>
+
+                <p>Fat: 14g</p>
+
+                <p>Carbs: 35g</p>
+
+                <p>Protein: 15g</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function openModal(modalId) {
+
+            document.getElementById(modalId).style.display = 'block';
+
+        }
+
+
+        function closeModal(modalId) {
+
+            document.getElementById(modalId).style.display = 'none';
+
+        }
+
+
+        // Close modal when clicking outside
+
+        window.onclick = function(event) {
+
+            if (event.target.classList.contains('modal')) {
+
+                event.target.style.display = 'none';
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
