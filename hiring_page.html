@@ -11,14 +11,13 @@
             padding: 0;
             background: #ececec;
         }
-
         .container {
             display: flex;
             height: 100vh; /* ensure the container covers the full viewport height */
         }
 
         .left-half {
-            width: 50%;
+            width: 300px;
             background: #FF0000; /* Red background for left half */
         }
 
@@ -45,7 +44,8 @@
         }
 
         .left-panel img {
-            width: 180px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background-color: #fff;
             padding: 10px;
@@ -58,7 +58,7 @@
         .left-panel nav a {
             display: block;
             margin: 10px auto;
-            padding: 10px;
+            padding: 0;
             background: #FFFFFF;
             color: #000000;
             text-decoration: none;
@@ -73,11 +73,13 @@
 
         .right-panel {
             background: #fff;
-            padding: 25px;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
             flex: 2;
             margin-left: 20px;
+            max-width: 800px;
+            margin: 40px auto;
         }
 
         .right-panel h2 {
