@@ -14,34 +14,116 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
-            overflow-y: auto;
-            max-height: 80vh;
         }
         
         .nutrition-item {
-            margin-bottom: 30px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
+
+        .nutrition-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .close-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .pizza-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .right-section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .performance-facts {
+            border: 1px solid #000;
+            margin: 20px auto;
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .performance-facts table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .performance-facts__title {
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 0 0 0.25rem 0;
+        }
+
+        h1.main-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2.5em;
+        }
+
         .nutrition-title {
             text-align: center;
             font-size: 24px;
             margin-bottom: 15px;
             color: #333;
         }
-
-        .performance-facts {
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Left Navigation Section -->
         <div class="left-section">
             <div class="logo">
                 <img src="images/LumiPizzatransparent.png" alt="Lumi Logo" style="width: 100px; height: 100px; margin-right: 10px;">
@@ -56,174 +138,126 @@
             </nav>
         </div>
 
-        <!-- Right Nutritional Information Section -->
         <div class="right-section">
-            <h1 class="nutrition-title">Nutritional Information</h1>
+            <h1 class="main-title">Nutritional Information</h1>
             <div class="nutrition-grid">
-                <!-- Pepperoni Pizza -->
-                <div class="nutrition-item">
+                <!-- Clickable Cards -->
+                <div class="nutrition-item" onclick="openModal('pepperoni-modal')">
+                    <img src="images/pepperoni-pizza.jpg" alt="Pepperoni Pizza" class="pizza-image">
                     <h2>Pepperoni Pizza</h2>
-                    <div class="performance-facts">
-                        <div class="performance-facts__header">
-                            <h1 class="performance-facts__title">Nutrition Facts</h1>
-                            <p><span id="lnumser">0</span> servings per container</p>
-                        </div>
-                        <table class="performance-facts__table">
-                            <thead>
-                                <tr>
-                                    <th colspan="3" class="amps">Amount Per Serving</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th colspan="2" id="lkcal-val-cal"><b>Calories</b></th>
-                                    <td class="nob">249</td>
-                                </tr>
-                                <tr class="thick-row">
-                                    <td colspan="3" class="small-info"><b>% Daily Value*</b></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Total Fat</b> 15.5 g</th>
-                                    <td><b>24 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Saturated Fat 7.8 g</th>
-                                    <td><b>39 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Trans Fat 0.1 g</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Cholesterol</b> 40.4 mg</th>
-                                    <td><b>13 %</b></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Sodium</b> 521.1 mg</th>
-                                    <td><b>22 %</b></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Total Carbohydrate</b> 15.2 g</th>
-                                    <td><b>5 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Dietary Fiber 0.6 g</th>
-                                    <td><b>2 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Total Sugars 1.5 g</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Includes - Added Sugars</th>
-                                    <td></td>
-                                </tr>
-                                <tr class="thick-end">
-                                    <th colspan="2"><b>Protein</b> 11.8 g</th>
-                                    <td><b>24 %</b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="performance-facts__table--grid">
-                            <tbody>
-                                <tr>
-                                    <th>Vitamin D 0.3 µg</th>
-                                    <td><b>2 %</b></td>
-                                </tr>
-                                <tr>
-                                    <th>Calcium 266.3 mg</th>
-                                    <td><b>27 %</b></td>
-                                </tr>
-                                <tr>
-                                    <th>Iron 1.2 mg</th>
-                                    <td><b>6 %</b></td>
-                                </tr>
-                                <tr class="thin-end">
-                                    <th>Potassium 83 mg</th>
-                                    <td><b>2 %</b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p class="small-info">*Percent Daily Values are based on a 2,000 calorie diet.</p>
-                    </div>
+                    <p>Click to view nutrition facts</p>
                 </div>
 
-                <!-- Cheese Pizza -->
-                <div class="nutrition-item">
+                <div class="nutrition-item" onclick="openModal('cheese-modal')">
+                    <img src="images/cheese-pizza.jpg" alt="Cheese Pizza" class="pizza-image">
                     <h2>Cheese Pizza</h2>
-                    <div class="performance-facts">
-                        <div class="performance-facts__header">
-                            <h1 class="performance-facts__title">Nutrition Facts</h1>
-                            <p><span id="lnumser">0</span> servings per container</p>
-                        </div>
-                        <table class="performance-facts__table">
-                            <thead>
-                                <tr>
-                                    <th colspan="3" class="amps">Amount Per Serving</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th colspan="2" id="lkcal-val-cal"><b>Calories</b></th>
-                                    <td class="nob">415</td>
-                                </tr>
-                                <tr class="thick-row">
-                                    <td colspan="3" class="small-info"><b>% Daily Value*</b></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Total Fat</b> 27.8 g</th>
-                                    <td><b>43 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Saturated Fat 16.5 g</th>
-                                    <td><b>83 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Trans Fat 0 g</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Cholesterol</b> 90.5 mg</th>
-                                    <td><b>30 %</b></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Sodium</b> 856 mg</th>
-                                    <td><b>36 %</b></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2"><b>Total Carbohydrate</b> 16.7 g</th>
-                                    <td><b>6 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Dietary Fiber 0.6 g</th>
-                                    <td><b>2 %</b></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Total Sugars 2.2 g</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td class="blank-cell"></td>
-                                    <th>Includes - Added Sugars</th>
-                                    <td></td>
-                                </tr>
-                                <tr class="thick-end">
-                                    <th colspan="2"><b>Protein</b> 24.3 g</th>
-                                    <td><b>49 %</b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="performance-facts__table--grid">
-                            <tbody>
-                                <tr>
-                                    <th>Vitamin D 0.5 µg</th>
-                                    <td><b>3 %</b></
+                    <p>Click to view nutrition facts</p>
+                </div>
+
+                <div class="nutrition-item" onclick="openModal('veggie-modal')">
+                    <img src="images/veggie-pizza.jpg" alt="Veggie Pizza" class="pizza-image">
+                    <h2>Veggie Pizza</h2>
+                    <p>Click to view nutrition facts</p>
+                </div>
+
+                <div class="nutrition-item" onclick="openModal('spaghetti-modal')">
+                    <img src="images/code-spaghetti.jpg" alt="Code Spaghetti" class="pizza-image">
+                    <h2>Code Spaghetti</h2>
+                    <p>Click to view nutrition facts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modals -->
+<div id="pepperoni-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('pepperoni-modal')">&times;</span>
+        <h2>Pepperoni Pizza</h2>
+        <div class="performance-facts">
+            <table>
+                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
+                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
+                <tr><th colspan="2">Amount Per Serving</th></tr>
+                <tr><td><strong>Calories</strong></td><td>298</td></tr>
+                <tr><td>Total Fat</td><td>13.3g</td></tr>
+                <tr><td>Saturated Fat</td><td>5.3g</td></tr>
+                <tr><td>Cholesterol</td><td>30mg</td></tr>
+                <tr><td>Sodium</td><td>683mg</td></tr>
+                <tr><td>Total Carbohydrates</td><td>31g</td></tr>
+                <tr><td>Dietary Fiber</td><td>2g</td></tr>
+                <tr><td>Sugars</td><td>3.5g</td></tr>
+                <tr><td>Protein</td><td>13.3g</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="cheese-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('cheese-modal')">&times;</span>
+        <h2>Cheese Pizza</h2>
+        <div class="performance-facts">
+            <table>
+                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
+                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
+                <tr><th colspan="2">Amount Per Serving</th></tr>
+                <tr><td><strong>Calories</strong></td><td>250</td></tr>
+                <tr><td>Total Fat</td><td>10g</td></tr>
+                <tr><td>Saturated Fat</td><td>4.5g</td></tr>
+                <tr><td>Cholesterol</td><td>18mg</td></tr>
+                <tr><td>Sodium</td><td>570mg</td></tr>
+                <tr><td>Total Carbohydrates</td><td>31g</td></tr>
+                <tr><td>Dietary Fiber</td><td>1.5g</td></tr>
+                <tr><td>Sugars</td><td>3.5g</td></tr>
+                <tr><td>Protein</td><td>11g</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="veggie-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('veggie-modal')">&times;</span>
+        <h2>Veggie Pizza</h2>
+        <div class="performance-facts">
+            <table>
+                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
+                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
+                <tr><th colspan="2">Amount Per Serving</th></tr>
+                <tr><td><strong>Calories</strong></td><td>235</td></tr>
+                <tr><td>Total Fat</td><td>8g</td></tr>
+                <tr><td>Saturated Fat</td><td>3.5g</td></tr>
+                <tr><td>Cholesterol</td><td>15mg</td></tr>
+                <tr><td>Sodium</td><td>490mg</td></tr>
+                <tr><td>Total Carbohydrates</td><td>32g</td></tr>
+                <tr><td>Dietary Fiber</td><td>2.5g</td></tr>
+                <tr><td>Sugars</td><td>4g</td></tr>
+                <tr><td>Protein</td><td>10g</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="spaghetti-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('spaghetti-modal')">&times;</span>
+        <h2>Code Spaghetti</h2>
+        <div class="performance-facts">
+            <table>
+                <tr><th colspan="2"><h3>Nutrition Facts</h3></th></tr>
+                <tr><td colspan="2"><strong>Serving Size: 1 slice (1/8 of 14" pizza)</strong></td></tr>
+                <tr><th colspan="2">Amount Per Serving</th></tr>
+                <tr><td><strong>Calories</strong></td><td>320</td></tr>
+                <tr><td>Total Fat</td><td>14g</td></tr>
+                <tr><td>Saturated Fat</td><td>6g</td></tr>
+                <tr><td>Cholesterol</td><td>25mg</td></tr>
+                <tr><td>Sodium</td><td>720mg</td></tr>
+                <tr><td>Total Carbohydrates</td><td>35g</td></tr>
+                <tr><td>Dietary Fiber</td><td>2g</td></tr>
+                <tr><td>Sugars</td><td>4g</td></tr>
+                <tr><td>Protein</td><td>15g</td></tr>
+            </table>
+        </div>
+    </div>
+</div>

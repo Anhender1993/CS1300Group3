@@ -161,3 +161,30 @@ h1, h2, h3, h4, h5, h6, p, a, li {
         transform: translateY(0);
     }
 }
+
+/* Nutrition Facts Styles */
+.performance-facts table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.performance-facts th, 
+.performance-facts td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.performance-facts th {
+    background-color: #f5f5f5;
+}
+
+.performance-facts tr:hover {
+    background-color: #f9f9f9;
+}
+
+.performance-facts h3 {
+    margin: 10px 0;
+    color: #333;
+}
