@@ -3,30 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumi Pizza</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://www.edamam.com/assets/css/label.css" rel="stylesheet">
+    <title>Lumi Pizza - Nutritional Information</title>
     <script src="Nutrition.js" type="module" defer></script>
     <script src="app.js" type="module" defer></script>
+    <style>
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .nutrition-item {
+            margin-bottom: 30px;
+        }
+        
+        .nutrition-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- Left Navigation Section -->
         <div class="left-section">
             <div class="logo">
-                <img src="LumiPizzatransparent.png" alt="Lumi Pizza Logo">
+                <img src="images/LumiPizzatransparent.png" alt="Lumi Logo" style="width: 100px; height: 100px; margin-right: 10px;">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#team">Join the Team</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="nutrition.html">Nutritional facts</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="join.html">Join the team</a></li>
                 </ul>
             </nav>
         </div>
 
+        <!-- Right Nutritional Information Section -->
         <div class="right-section">
-            <h1>Nutritional information</h1>
-            <div id="nutrition-container"></div>
+            <h1 class="nutrition-title">Nutritional Information</h1>
+            <div class="nutrition-grid">
+                <div class="nutrition-item">
+                    <h2>Pepperoni Pizza</h2>
+                    <!-- Pepperoni Pizza nutrition label code here -->
+                </div>
+                <div class="nutrition-item">
+                    <h2>Cheese Pizza</h2>
+                    <!-- Cheese Pizza nutrition label code here -->
+                </div>
+                <div class="nutrition-item">
+                    <h2>Veggie Pizza</h2>
+                    <!-- Veggie Pizza nutrition label code here -->
+                </div>
+                <div class="nutrition-item">
+                    <h2>Code Spaghetti</h2>
+                    <!-- Code Spaghetti nutrition label code here-->
+                </div>
+            </div>
         </div>
     </div>
 </body>
