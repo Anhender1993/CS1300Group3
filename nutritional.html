@@ -14,6 +14,8 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
+            overflow-y: auto;
+            max-height: 80vh;
         }
         
         .nutrition-item {
@@ -25,6 +27,15 @@
             font-size: 24px;
             margin-bottom: 15px;
             color: #333;
+        }
+
+        .performance-facts {
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -49,24 +60,170 @@
         <div class="right-section">
             <h1 class="nutrition-title">Nutritional Information</h1>
             <div class="nutrition-grid">
+                <!-- Pepperoni Pizza -->
                 <div class="nutrition-item">
                     <h2>Pepperoni Pizza</h2>
-                    <!-- Pepperoni Pizza nutrition label code here -->
+                    <div class="performance-facts">
+                        <div class="performance-facts__header">
+                            <h1 class="performance-facts__title">Nutrition Facts</h1>
+                            <p><span id="lnumser">0</span> servings per container</p>
+                        </div>
+                        <table class="performance-facts__table">
+                            <thead>
+                                <tr>
+                                    <th colspan="3" class="amps">Amount Per Serving</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th colspan="2" id="lkcal-val-cal"><b>Calories</b></th>
+                                    <td class="nob">249</td>
+                                </tr>
+                                <tr class="thick-row">
+                                    <td colspan="3" class="small-info"><b>% Daily Value*</b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Total Fat</b> 15.5 g</th>
+                                    <td><b>24 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Saturated Fat 7.8 g</th>
+                                    <td><b>39 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Trans Fat 0.1 g</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Cholesterol</b> 40.4 mg</th>
+                                    <td><b>13 %</b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Sodium</b> 521.1 mg</th>
+                                    <td><b>22 %</b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Total Carbohydrate</b> 15.2 g</th>
+                                    <td><b>5 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Dietary Fiber 0.6 g</th>
+                                    <td><b>2 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Total Sugars 1.5 g</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Includes - Added Sugars</th>
+                                    <td></td>
+                                </tr>
+                                <tr class="thick-end">
+                                    <th colspan="2"><b>Protein</b> 11.8 g</th>
+                                    <td><b>24 %</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="performance-facts__table--grid">
+                            <tbody>
+                                <tr>
+                                    <th>Vitamin D 0.3 µg</th>
+                                    <td><b>2 %</b></td>
+                                </tr>
+                                <tr>
+                                    <th>Calcium 266.3 mg</th>
+                                    <td><b>27 %</b></td>
+                                </tr>
+                                <tr>
+                                    <th>Iron 1.2 mg</th>
+                                    <td><b>6 %</b></td>
+                                </tr>
+                                <tr class="thin-end">
+                                    <th>Potassium 83 mg</th>
+                                    <td><b>2 %</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="small-info">*Percent Daily Values are based on a 2,000 calorie diet.</p>
+                    </div>
                 </div>
+
+                <!-- Cheese Pizza -->
                 <div class="nutrition-item">
                     <h2>Cheese Pizza</h2>
-                    <!-- Cheese Pizza nutrition label code here -->
-                </div>
-                <div class="nutrition-item">
-                    <h2>Veggie Pizza</h2>
-                    <!-- Veggie Pizza nutrition label code here -->
-                </div>
-                <div class="nutrition-item">
-                    <h2>Code Spaghetti</h2>
-                    <!-- Code Spaghetti nutrition label code here-->
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+                    <div class="performance-facts">
+                        <div class="performance-facts__header">
+                            <h1 class="performance-facts__title">Nutrition Facts</h1>
+                            <p><span id="lnumser">0</span> servings per container</p>
+                        </div>
+                        <table class="performance-facts__table">
+                            <thead>
+                                <tr>
+                                    <th colspan="3" class="amps">Amount Per Serving</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th colspan="2" id="lkcal-val-cal"><b>Calories</b></th>
+                                    <td class="nob">415</td>
+                                </tr>
+                                <tr class="thick-row">
+                                    <td colspan="3" class="small-info"><b>% Daily Value*</b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Total Fat</b> 27.8 g</th>
+                                    <td><b>43 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Saturated Fat 16.5 g</th>
+                                    <td><b>83 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Trans Fat 0 g</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Cholesterol</b> 90.5 mg</th>
+                                    <td><b>30 %</b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Sodium</b> 856 mg</th>
+                                    <td><b>36 %</b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><b>Total Carbohydrate</b> 16.7 g</th>
+                                    <td><b>6 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Dietary Fiber 0.6 g</th>
+                                    <td><b>2 %</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Total Sugars 2.2 g</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank-cell"></td>
+                                    <th>Includes - Added Sugars</th>
+                                    <td></td>
+                                </tr>
+                                <tr class="thick-end">
+                                    <th colspan="2"><b>Protein</b> 24.3 g</th>
+                                    <td><b>49 %</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="performance-facts__table--grid">
+                            <tbody>
+                                <tr>
+                                    <th>Vitamin D 0.5 µg</th>
+                                    <td><b>3 %</b></
