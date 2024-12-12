@@ -1,21 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Menu</title>
-	<style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Pizza Ordering Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #FFD700;
+            padding: 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #000;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 20%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .sidebar nav a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .sidebar nav a:hover {
+            background-color: #0056b3;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .menu {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .menu h2 {
+            color: #007BFF;
+            margin-top: 0;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu li {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .menu li:hover {
+            background-color: #e9e9e9;
+        }
+        .order-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .order-form h2 {
+            color: #007BFF;
+            margin-top: 0;
+        }
+        .order-form input, .order-form select, .order-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .order-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .order-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lumi Pizza Ordering Menu</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <img src="logo.png" alt="Lumi Pizza Logo">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Menu</a>
+                <a href="#">Nutritional Facts</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="menu">
+                <h2>Our Menu</h2>
+                <ul>
+                    <li>Pizza Margherita - $10</li>
+                    <li>Pepperoni Pizza - $12</li>
+                    <li>BBQ Chicken Pizza - $14</li>
+                    <li>Vegetarian Pizza - $11</li>
+                </ul>
+            </div>
+            <div class="order-form">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+                    <label for="pizzaType">Pizza Type:</label>
+                    <select id="pizzaType" name="pizzaType" required>
+                        <option value="margherita">Pizza Margherita</option>
+                        <option value="pepperoni">Pepperoni Pizza</option>
+                        <option value="bbq">BBQ Chicken Pizza</option>
+                        <option value="vegetarian">Vegetarian Pizza</option>
+                    </select>
+                    <button type="submit">Order Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const pizzaType = document.getElementById('pizzaType').value;
 
-
-
-
-
-
-
-
-
-
-
-
+            alert(`Thank you, ${name}! Your ${pizzaType} pizza will be delivered to ${address}.`);
+        });
+    </script>
+</body>
 </html>
