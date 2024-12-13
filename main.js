@@ -46,7 +46,7 @@ if (document.title === 'Lumi Pizza - Home') {
     });
 
     // API Call to Fetch Data
-    fetch('https://api.example.com/data', {
+    fetch('https://api.data.gov/', {
         headers: {
             'Authorization': 'Bearer u4n4Oywy9KhhzgbIAQKcTFQ6M0RzjZaO1SCk5muc'
         }
