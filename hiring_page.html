@@ -3,105 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Join Our Team</title>
     <style>
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: #ececec;
         }
+
         .container {
             display: flex;
-            height: 100vh; /* ensure the container covers the full viewport height */
+            height: 100vh;
         }
 
-        .left-half {
+        /* Left Section */
+        .left-section {
+            background: #FF0000; /* Red background for left section */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 300px;
-            background: #FF0000; /* Red background for left half */
         }
 
-        .right-half {
-            width: 50%;
-            background: #ececec; /* white background for right half */
-            padding: 25px;
-        }
-
-        header {
-            padding: 100px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            color: #333;
-        }
-
-        .left-panel {
-            text-align: center;
-            flex: 1;
-            width: 80%;
-        }
-
-        .left-panel img {
+        .left-section .logo img {
             width: 100px;
             height: 100px;
-            border-radius: 50%;
-            background-color: #fff;
-            padding: 10px;
         }
 
-        .left-panel nav {
-            margin-top: 50px;
-        }
-
-        .left-panel nav a {
-            display: block;
-            margin: 10px auto;
+        .left-section nav ul {
+            list-style: none;
             padding: 0;
+            margin-top: 20px;
+        }
+
+        .left-section nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .left-section nav ul li a {
+            display: block;
             background: #FFFFFF;
             color: #000000;
             text-decoration: none;
-            border-radius: 6px;
-            width: 90%;
             text-align: center;
+            padding: 10px;
+            border-radius: 6px;
         }
 
-        .left-panel nav a:hover {
+        .left-section nav ul li a:hover {
             background: #0056b3;
+            color: #FFFFFF;
         }
 
-        .right-panel {
-            background: #fff;
+        /* Right Section */
+        .right-section {
+            flex: 1;
             padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('images/Pizza_guy.png') no-repeat center center;
+            background-size: cover;
             border-radius: 12px;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-            flex: 2;
-            margin-left: 20px;
-            max-width: 800px;
-            margin: 40px auto;
+            margin: 40px;
         }
 
-        .right-panel h2 {
-            color: #FFFFFF
-            margin-bottom: 15px;
+        .right-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 6px;
         }
 
-        .right-panel form label {
+        .right-section form {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .right-section form label {
             display: block;
             margin-top: 10px;
             font-weight: bold;
         }
 
-        .right-panel form input {
+        .right-section form input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin: 10px 0;
             border: 1px solid #bbb;
             border-radius: 5px;
         }
 
-        .right-panel form button {
+        .right-section form button {
             width: 100%;
             padding: 12px;
             background: #28a745;
@@ -109,61 +114,63 @@
             border: none;
             border-radius: 6px;
             font-size: 16px;
+            cursor: pointer;
         }
 
-        .right-panel form button:hover {
+        .right-section form button:hover {
             background: #218838;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
 
-            .left-half, .right-half {
+            .left-section {
                 width: 100%;
-                height: 50vh; /* Each half takes half the viewport height on small screens */
+                height: auto;
             }
 
-            .right-panel {
-                margin-left: 0;
-                margin-top: 20px;
+            .right-section {
+                margin: 20px;
+                width: calc(100% - 40px);
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-half">
-            <header>
-                <h1>Join Our Team</h1>
-            </header>
-            <div class="left-panel">
-                <img src="LumiPizzatransparent.png" alt="Lumi Pizza">
-                <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Menu</a>
-                    <a href="#">Nutritional Facts</a>
-                </nav>
+        <!-- Left Navigation Section -->
+        <div class="left-section">
+            <div class="logo">
+                <img src="images/LumiPizzatransparent.png" alt="Lumi Logo">
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="nutritional.html">Nutritional Facts</a></li>
+                    <li><a href="ordering_menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="right-half">
-            <div class="right-panel">
-                <h2>Apply Today!!</h2>
-                <form id="applicationForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="Name" required>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Email" required>
+        <!-- Right Application Section -->
+        <div class="right-section">
+            <h2>Apply Today!!</h2>
+            <form id="applicationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name" required>
 
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" placeholder="Phone" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email" required>
 
-                    <button type="submit">Apply Now</button>
-                </form>
-            </div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Phone" required>
+
+                <button type="submit">Apply Now</button>
+            </form>
         </div>
     </div>
 
