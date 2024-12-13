@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Join Our Team</title>
     <style>
-        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -16,12 +16,38 @@
 
         .container {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 101;
+            text-align: center;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 24px;
+            color: red;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .menu-text {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
         }
 
         /* Left Section */
         .left-section {
-            background: #FF0000; /* Red background for left section */
+            background: #FF0000;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -104,6 +130,7 @@
             margin: 10px 0;
             border: 1px solid #bbb;
             border-radius: 5px;
+            box-sizing: border-box;
         }
 
         .right-section form button {
@@ -121,26 +148,49 @@
             background: #218838;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Mobile Responsive Design */
+        @media screen and (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
 
             .left-section {
-                width: 100%;
-                height: auto;
+                position: fixed;
+                left: -100%;
+                top: 0;
+                height: 100vh;
+                width: 250px;
+                transition: 0.3s;
+                z-index: 100;
+            }
+
+            .left-section.active {
+                left: 0;
             }
 
             .right-section {
                 margin: 20px;
                 width: calc(100% - 40px);
+                padding: 60px 20px 20px 20px;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .hamburger-container {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="hamburger-container">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu-text">menu</div>
+        </div>
+
         <!-- Left Navigation Section -->
         <div class="left-section">
             <div class="logo">
@@ -175,6 +225,10 @@
     </div>
 
     <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.left-section').classList.toggle('active');
+        });
+
         document.getElementById('applicationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
