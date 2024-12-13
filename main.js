@@ -1,5 +1,22 @@
 // Common functionality for all pages
 
+// Hamburger Menu Functionality
+const hamburger = document.querySelector('.hamburger-menu');
+const leftSection = document.querySelector('.left-section');
+
+if (hamburger && leftSection) {
+    hamburger.addEventListener('click', () => {
+        leftSection.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!leftSection.contains(e.target) && !hamburger.contains(e.target)) {
+            leftSection.classList.remove('active');
+        }
+    });
+}
+
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (event) => {

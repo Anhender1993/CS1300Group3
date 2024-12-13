@@ -1,85 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lumi Pizza</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .left-section {
-      flex: 1;
-      background-color: red;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
-      color: white;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .left-section {
+            flex: 1;
+            background-color: red;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-    }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
 
-    .logo img {
-      width: 100px;
-      height: 100px;
-      margin-right: 10px;
-    }
+        .logo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
 
-    .buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin: auto;
-      padding: 20px;
-      width: 80%;
-    }
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+        }
 
-    .phone-container {
-      width: 300px;
-      height: 600px;
-      border-radius: 30px;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+        .phone-container {
+            width: 300px;
+            height: 600px;
+            border-radius: 30px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-    .phone-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+        .phone-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                height: 100vh;
+                width: 250px;
+                transition: 0.3s;
+                z-index: 100;
+            }
+
+            .left-section.active {
+                left: 0;
+            }
+
+            .hamburger-menu {
+                display: block;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 101;
+                cursor: pointer;
+                font-size: 24px;
+                color: red;
+                background: white;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+
+            .right-section {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .hamburger-menu {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left-section">
-      <div class="logo">
-        <img src="images/LumiPizzatransparent.png" alt="Lumi Logo">
-        <h1>Lumi Pizza</h1>
-      </div>
-      <div class="buttons">
-        <a href="ordering_menu.html" class="button">Menu</a>
-        <a href="nutritional.html" class="button">Nutritional Information</a>
-        <a href="contact.html" class="button">Contact Us</a>
-        <a href="hiring_page.html" class="button">Join the Team</a>
-      </div>
-    </div>
+    <div class="container">
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <div class="left-section">
+            <div class="logo">
+                <img src="images/LumiPizzatransparent.png" alt="Lumi Logo">
+                <h1>Lumi Pizza</h1>
+            </div>
+            <div class="buttons">
+                <a href="ordering_menu.html" class="button">Menu</a>
+                <a href="nutritional.html" class="button">Nutritional Information</a>
+                <a href="contact.html" class="button">Contact Us</a>
+                <a href="hiring_page.html" class="button">Join the Team</a>
+            </div>
+        </div>
 
-    <div class="right-section">
-      <div class="phone-container">
-        <img src="images/Cellphone.png" alt="Pizza on Phone Screen">
-      </div>
+        <div class="right-section">
+            <div class="phone-container">
+                <img src="images/Cellphone.png" alt="Pizza on Phone Screen">
+            </div>
+        </div>
     </div>
-  </div>
+    <script src="main.js"></script>
 </body>
 </html>
