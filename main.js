@@ -44,6 +44,21 @@ if (document.title === 'Lumi Pizza - Home') {
     heroImage.addEventListener('mouseleave', () => {
         heroImage.style.transform = 'scale(1)';
     });
+
+    // API Call to Fetch Data
+    fetch('https://api.example.com/data', {
+        headers: {
+            'Authorization': 'Bearer u4n4Oywy9KhhzgbIAQKcTFQ6M0RzjZaO1SCk5muc'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Process and display the data
+        const dataContainer = document.createElement('div');
+        dataContainer.textContent = `API Data: ${data.someValue}`;
+        document.body.appendChild(dataContainer);
+    })
+    .catch(error => console.error('Error fetching data:', error));
 }
 
 // Menu Page Functionality
