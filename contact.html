@@ -4,11 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Lumi Pizza - Contact</title>
+    <style>
+        .hamburger-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 101;
+            text-align: center;
+            display: none;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 24px;
+            color: red;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .menu-text {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                height: 100vh;
+                width: 250px;
+                transition: 0.3s;
+                z-index: 100;
+            }
+
+            .left-section.active {
+                left: 0;
+            }
+
+            .hamburger-container {
+                display: block;
+            }
+
+            .right-section {
+                margin-top: 60px;
+                width: calc(100% - 40px);
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .hamburger-container {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Left Navigation Section -->
+        <!-- Add hamburger menu -->
+        <div class="hamburger-container">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu-text">menu</div>
+        </div>
+
         <div class="left-section">
             <div class="logo">
                 <img src="images/LumiPizzatransparent.png" alt="Lumi Logo" style="width: 100px; height: 100px; margin-right: 10px;">
@@ -22,7 +92,7 @@
                 </ul>
             </nav>
         </div>
-        <!-- Right Contact Information Section -->
+
         <div class="right-section">
             <div class="contact-info">
                 <h2>Contact us:</h2>
@@ -32,6 +102,12 @@
             <div id="apiData"></div>
         </div>
     </div>
+
+    <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.left-section').classList.toggle('active');
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
