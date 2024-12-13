@@ -126,18 +126,56 @@ nav ul li a:hover {
         left: 0;
     }
 
-    .hamburger-menu {
-        display: block;
+    .logo {
         position: fixed;
         top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: transparent;
+    }
+
+    .logo h1 {
+        color: red;
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .hamburger-container {
+        position: fixed;
+        top: -1px;
         left: 20px;
         z-index: 101;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger-menu {
         cursor: pointer;
         font-size: 24px;
         color: red;
         background: white;
         padding: 10px;
         border-radius: 5px;
+    }
+
+    .menu-text {
+        color: red;
+        font-size: 12px;
+        margin-top: 4px;
+        font-weight: bold;
     }
 
     .buttons {
@@ -148,10 +186,14 @@ nav ul li a:hover {
     .right-section {
         width: 100%;
     }
+
+    .phone-container {
+        margin-top: 20vh;
+    }
 }
 
 @media screen and (min-width: 769px) {
-    .hamburger-menu {
+    .hamburger-container {
         display: none;
     }
 }
