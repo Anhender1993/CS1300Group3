@@ -4,49 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Lumi Pizza - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Lumi Pizza - Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ececec;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .hamburger-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 101;
+            text-align: center;
+            display: none;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 24px;
+            color: red;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .menu-text {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .left-section {
+            background: #FF0000;
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .left-section nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .left-section nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .left-section nav ul li a {
+            display: block;
+            background: #FFFFFF;
+            color: #000000;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .left-section nav ul li a:hover {
+            background: #0056b3;
+            color: #FFFFFF;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            background: #FFFFFF;
+            background-image: url('images/Spaghetti.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .menu, .order-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .menu h2, .order-form h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu li {
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .menu li:hover {
+            background-color: #ececec;
+        }
+
+        .order-form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .order-form input, .order-form select, .order-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+        }
+
+        .order-form button {
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .order-form button:hover {
+            background: #218838;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                height: 100vh;
+                width: 250px;
+                transition: 0.3s;
+                z-index: 100;
+            }
+
+            .left-section.active {
+                left: 0;
+            }
+
+            .hamburger-container {
+                display: block;
+            }
+
+            .right-section {
+                margin-top: 60px;
+                width: calc(100% - 40px);
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .hamburger-container {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Left Navigation Section -->
-        <div class="left-section">
-            <div class="logo">
-                <img src="images/LumiPizzatransparent.png" alt="Lumi Logo" style="width: 100px; height: 100px; margin-right: 10px;">
+        <!-- Add hamburger menu -->
+        <div class="hamburger-container">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
             </div>
+            <div class="menu-text">more</div>
+        </div>
+
+        <div class="left-section">
+            <img src="images/LumiPizzatransparent.png" alt="Lumi Logo">
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="nutritional.html">Nutritional facts</a></li>
+                    <li><a href="nutritional.html">Nutritional Facts</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="join.html">Join the team</a></li>
+                    <li><a href="hiring_page.html">Join the Team</a></li>
                 </ul>
             </nav>
         </div>
-        <!-- Right Contact Information Section -->
+
         <div class="right-section">
-            <div class="contact-info">
-                <h2>Contact us:</h2>
-                <p>Email us: <a href="mailto:Lumipizza@atlas.com">Lumipizza@atlas.com</a></p>
-                <p>Call us: <a href="tel:9188675309">918-867-5309</a></p>
+            <div class="menu">
+                <h2>Our Menu</h2>
+                <ul>
+                    <li>Pepperoni Pizza - $12</li>
+                    <li>Cheese Pizza - $10</li>
+                    <li>Veggie Pizza - $11</li>
+                    <li>Code Spaghetti - $15</li>
+                </ul>
+            </div>
+
+            <div class="order-form">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+                    <label for="pizzaType">Pizza Type:</label>
+                    <select id="pizzaType" name="pizzaType" required>
+                        <option value="pepperoni">Pepperoni Pizza</option>
+                        <option value="cheese">Cheese Pizza</option>
+                        <option value="veggie">Veggie Pizza</option>
+                        <option value="code-spaghetti">Code Spaghetti</option>
+                    </select>
+
+                    <button type="submit">Order Now</button>
+                </form>
             </div>
         </div>
     </div>
 
     <script>
-        // API Call to Fetch Data
-        fetch('https://api.data.gov/', {
-            headers: {
-                'Authorization': 'Bearer u4n4Oywy9KhhzgbIAQKcTFQ6M0RzjZaO1SCk5muc'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Process and display the data
-            const dataContainer = document.createElement('div');
-            dataContainer.textContent = `API Data: ${data.someValue}`;
-            document.body.appendChild(dataContainer);
-        })
-        .catch(error => console.error('Error fetching data:', error));
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.left-section').classList.toggle('active');
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const pizzaType = document.getElementById('pizzaType').value;
+
+            alert(`Thank you, ${name}! Your ${pizzaType} will be delivered to ${address}.`);
+        });
     </script>
 </body>
 </html>
